@@ -1,11 +1,16 @@
+#include <iostream>
+#include "DerivedChar.h"
+#include "IllegalCoordinateException.cpp"
+
 class Board{
     private:
-        GameBoard* board;
+        DerivedChar** board;
+        int size;
     
     public:
         Board(int size);
-        void operator= (const Symbol s);
-        void operator= (const gameBoard& b);
-        char& operator[] (const Coordinate& c);
-        friend ostream& operator<< (ostream& os, const gameBoard& b);
+        void operator= (const DerivedChar& dc);
+        DerivedChar& operator[] (const Coordinate& c) const;
+        friend ostream& operator<< (ostream& os, const Board& b);
+        ~Board();
 };
