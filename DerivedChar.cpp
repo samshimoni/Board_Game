@@ -1,13 +1,8 @@
 #include "DerivedChar.h"
 
-DerivedChar::DerivedChar(){
-}
+DerivedChar::DerivedChar(const char c) : c(c) { }
 
-DerivedChar::DerivedChar(char c){
-    this->c = c;
-}
-
-void DerivedChar::operator= (const char c){
+DerivedChar& DerivedChar::operator= (const char c){
     switch (c){
         case Symbol::X:
             this->c = c;
@@ -20,7 +15,9 @@ void DerivedChar::operator= (const char c){
             break;
         default:
             throw IllegalCharException(c);
+            break;
     }
+    return *this;
 }
 
 

@@ -11,13 +11,13 @@ Board::Board(int size){
             this->board[i][j] = '.'; 
     }
 //             ^ ^    
-    // this->operator= ('.'); //Initialize the board
-    // this->board = '.';
+    // operator= ('.'); //Initialize the board
+
     
     
 }
 
-void Board::operator= (const DerivedChar& dc){
+DerivedChar& Board::operator= (const DerivedChar& dc){
     int i, j;
     for(i = 0; i < this->size; i++)
         for(j = 0; j < this->size; j++)
@@ -25,8 +25,8 @@ void Board::operator= (const DerivedChar& dc){
 }
 
 DerivedChar& Board::operator[] (const Coordinate& c) const{
-    if(c.getX()<this->size && c.getX()>=0 && c.getY()<this->size && c.getY()>=0)
-        return this->board[c.getX()][c.getY()];
+    if(c.getX() < size && c.getX() >= 0 && c.getY() < size && c.getY() >= 0)
+        return board[c.getX()][c.getY()];
     throw IllegalCoordinateException(c);
 }
 

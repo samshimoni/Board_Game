@@ -1,5 +1,7 @@
-#include "Symbol.h"
 #include <iostream>
+#include "Symbol.h"
+#include "IllegalCharException.cpp"
+
 using namespace std;
 
 class DerivedChar{
@@ -7,9 +9,8 @@ class DerivedChar{
         char c;
         
     public:
-        DerivedChar();
         DerivedChar(char c);
-        void operator= (const char c);
+        DerivedChar& operator= (const char c);
         void operator= (const DerivedChar& dc);
         friend ostream& operator<< (ostream& os, const DerivedChar& dc);
 };

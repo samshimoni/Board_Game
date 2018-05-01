@@ -1,19 +1,14 @@
 #include <exception>
 // #include <string>
 
-class IllegalCharException : public exception{
+class IllegalCharException {
     private:
-        char c;
+        const char c;
         
     public:
-        IllegalCharException(const char c){
-            this->c = c;  
-        }
+        IllegalCharException(const char c) : c(c){ }
         
-        // virtual const char* theChar() const{
-        //     return "Illegal char: " + c;
-        // }
-        virtual const char theChar() const{
+        const char theChar() const{
             return this->c;
         }
 };
