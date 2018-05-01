@@ -1,7 +1,7 @@
 #include <exception>
-#include <string>
+// #include <string>
 
-class IllegalCharException:public exception{
+class IllegalCharException : public exception{
     private:
         char c;
         
@@ -10,7 +10,10 @@ class IllegalCharException:public exception{
             this->c = c;  
         }
         
-        virtual string theChar() const{
-            return string("Illegal char: " + to_string(c));
+        // virtual const char* theChar() const{
+        //     return "Illegal char: " + c;
+        // }
+        virtual const char theChar() const{
+            return this->c;
         }
-}
+};

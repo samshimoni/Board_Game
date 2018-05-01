@@ -1,7 +1,8 @@
 #include <exception>
-#include <string>
+// #include <string>
+#include "Coordinate.h"
 
-class IllegalCoordinateException:public exception{
+class IllegalCoordinateException : public exception{
   private:
     Coordinate c;
     
@@ -10,7 +11,8 @@ class IllegalCoordinateException:public exception{
           this->c = c;
       }
       
-      virtual string theCoordinate(){
-          return string("Illegal coordinate: " + to_string(c.getX()) + "," + to_string(c.getY()));
+      virtual const char* theCoordinate(){
+          // return string("Illegal coordinate: " + to_string(c.getX()) + "," + to_string(c.getY()));
+          return c.getX() + "," + c.getY();
       }  
 };

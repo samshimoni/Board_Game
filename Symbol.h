@@ -1,2 +1,2 @@
 
-enum Symbol {. = '.', X = 'X', O = 'O'};
+enum Symbol : char{ P = '.', X = 'X', O = 'O' };

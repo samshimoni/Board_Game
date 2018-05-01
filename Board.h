@@ -1,4 +1,3 @@
-#include <iostream>
 #include "DerivedChar.h"
 #include "IllegalCoordinateException.cpp"
 
