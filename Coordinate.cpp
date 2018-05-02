@@ -18,3 +18,5 @@ int Coordinate::getX() const{
 int Coordinate::getY() const{
     return this->y;
 }
+
+Coordinate::~Coordinate() { }

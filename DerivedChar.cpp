@@ -1,6 +1,14 @@
 #include "DerivedChar.h"
 
-DerivedChar::DerivedChar(const char c) : c(c) { }
+DerivedChar::DerivedChar() : c('.') { }
+
+DerivedChar::DerivedChar(const char c) {
+    this->operator =(c);
+}
+
+DerivedChar::DerivedChar(const DerivedChar& dc) {
+    this->c = dc.c;
+}
 
 DerivedChar& DerivedChar::operator= (const char c){
     switch (c){
@@ -21,8 +29,9 @@ DerivedChar& DerivedChar::operator= (const char c){
 }
 
 
-void DerivedChar::operator= (const DerivedChar& dc){
+DerivedChar& DerivedChar::operator= (const DerivedChar& dc){
     this->c = dc.c;
+    return *this;
 }
 
 ostream& operator<< (ostream& os, const DerivedChar& dc){
