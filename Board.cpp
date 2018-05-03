@@ -9,11 +9,12 @@ Board::Board(int size) : size(size){
 }
 
 Board::Board(const Board& b){
-    this->board = new DerivedChar*[size];
+    this->size = b.size;
+    this->board = new DerivedChar*[this->size];
     int i, j;
-    for(i = 0; i < size; i++){
-        this->board[i] = new DerivedChar[size];
-        for(j = 0; j < size; j++){
+    for(i = 0; i < this->size; i++){
+        this->board[i] = new DerivedChar[this->size];
+        for(j = 0; j < this->size; j++){
             this->board[i][j] = b.board[i][j];
         }
     }
