@@ -11,7 +11,7 @@ Authors:
 Dvir Barzilay  
 Kineret Ruth Nahary  
 
-**Intoduction**
+**Introduction**
 ==
 
 About the assignment:
