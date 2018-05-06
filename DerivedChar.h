@@ -15,4 +15,6 @@ class DerivedChar{
         DerivedChar& operator= (const char c);
         DerivedChar& operator= (const DerivedChar& dc);
         friend ostream& operator<< (ostream& os, const DerivedChar& dc);
+        
+        operator char() const;
 };

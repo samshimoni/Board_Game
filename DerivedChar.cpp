@@ -37,3 +37,7 @@ DerivedChar& DerivedChar::operator= (const DerivedChar& dc){
 ostream& operator<< (ostream& os, const DerivedChar& dc){
     return os << dc.c;
 }
+
+DerivedChar::operator char() const{
+    return c;
+}

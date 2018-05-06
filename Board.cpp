@@ -54,6 +54,12 @@ DerivedChar& Board::operator[] (const Coordinate& c) const{
     throw IllegalCoordinateException(c);
 }
 
+// char Board::operator[] (const Coordinate& c) const{
+//     if(c.getX() < size && c.getX() >= 0 && c.getY() < size && c.getY() >= 0)
+//         return board[c.getX()][c.getY()];
+//     throw IllegalCoordinateException(c);
+// }
+
 ostream& operator<< (ostream& os, const Board& b){
     int i, j;
     for(i = 0; i < b.size; i++){
