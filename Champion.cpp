@@ -10,7 +10,7 @@ ____
 
 const Coordinate Champion::play(const Board& board)
 {
-    unsigned int size = board.size();
+     int size = board.size();
 
 
     //**STRATEGI**
@@ -21,13 +21,13 @@ const Coordinate Champion::play(const Board& board)
     if (board[{0,size}]=='.')
         return Coordinate{0,size};
 
-    for (unsigned int i=1; i<size; i++)
+    for ( int i=1; i<size; i++)
     {
         if (board[{i,size}]=='.')
             return Coordinate{i,size-i};
     }
 
-    for (unsigned i=0;i<=size;i++)
+    for ( i=0;i<=size;i++)
     {
         if (board[{i,i}]=='.')
             return Coordinate{i,i};
