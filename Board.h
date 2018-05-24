@@ -1,17 +1,27 @@
-#include "DerivedChar.h"
+#include <iostream>
+#include "Coordinate.h"
+#include "Cell.h"
 #include "IllegalCoordinateException.cpp"
+using namespace std;
 
-class Board{
-    private:
-        DerivedChar** board;
-        int size;
-    
+class Board
+{
     public:
-        Board(int size);
+        int size()  const;
+        Board(int n);
         Board(const Board& b);
-        Board& operator=(const Board& b);
-        Board& operator= (const char c);
-        DerivedChar& operator[] (const Coordinate& c) const;
-        friend ostream& operator<< (ostream& os, const Board& b);
+        Board& operator= (char c);
+        Cell& operator[] (const Coordinate& p)const;
+        Board& operator= (const Board& b);
+        void switchSol(char sol, int x, int y);
+        friend ostream& operator<<(ostream& os, const Board& b);
         ~Board();
+        void setBoard(const int sizeOfBoard);
+        void setMat(const int sizeOfBoard);
+        void setSize(const int oSize);
+
+    private:
+            Cell** board;
+            int _size;
+
 };

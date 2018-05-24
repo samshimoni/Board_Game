@@ -1,11 +1,46 @@
-class Coordinate{
+#pragma once
+#include <iostream>
+
+using namespace std;
+
+// Class that represent a point in Board
+class Coordinate
+{
     private:
-        int x, y;  
-    
+            int xVal, yVal;
+
     public:
-        Coordinate(int x, int y);
-        Coordinate& operator= (const Coordinate& c);
-        int getX() const;
-        int getY() const;
-        ~Coordinate();
+        //Mainlly Constructors
+
+        Coordinate()
+        {
+            xVal = 0;
+            yVal = 0;
+        }
+
+
+        Coordinate(int x, int y)
+        {
+            xVal = x;
+            yVal = y;
+        }
+
+        Coordinate(const Coordinate& p)
+        {
+            xVal = p.xVal;
+            yVal = p.yVal;
+        }
+
+        //gets
+
+        int getX() const
+        {
+            return xVal;
+        }
+
+        int getY() const
+        {
+            return yVal;
+        }
+
 };
