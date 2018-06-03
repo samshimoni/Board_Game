@@ -30,11 +30,10 @@ Cell::operator char() const
     return cell;
 }
 
-
-Cell& Cell::operator=(const char c)
+Cell& Cell::operator=(char c)
 {
-    if(c=='X'||c=='O'||c=='.')
-            cell = c;
+    if(c=='O'||c=='X'||c=='.')
+        cell = c;
     else
         throw IllegalCharException(c);
 }

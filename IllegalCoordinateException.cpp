@@ -13,10 +13,10 @@ public:
 
     string theCoordinate() const
     {
-        string s="";
-        s+=to_string(c.getX());
-        s+=", ";
-        s+=to_string(c.getY());
+        std::string s="";
+        s=s + to_string(c.getX());
+        s= s+", ";
+        s= s +to_string(c.getY());
        return s;
     }
 
